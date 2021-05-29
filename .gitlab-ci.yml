@@ -9,7 +9,6 @@ stages:
   - test
   - deploy_production
 
-# Job 1:
 Test:
   stage: test
   script:
@@ -18,8 +17,6 @@ Test:
 
 Production:
   image: ruby:latest
-  only:
-    - master
   stage: deploy_production
   script:
     - apt-get update -qy
