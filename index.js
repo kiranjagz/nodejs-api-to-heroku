@@ -32,10 +32,12 @@ app.post('/api/add', (req, res) => {
     });
 });
 
-app.get('/', (req, res) =>
+app.get('/', (req, res) => {
+    console.log("a");
     res.status(200).send({
         message: 'Hello from Bobbo!',
-    }));
+    })
+});
 // route to catch all
 app.get('*', (req, res) =>
     res.status(200).send({
