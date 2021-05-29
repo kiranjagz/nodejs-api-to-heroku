@@ -18,6 +18,9 @@ Test:
 Production:
   image: ruby:latest
   stage: deploy_production
+  only:
+    - master
+    - main
   script:
     - apt-get update -qy
     - apt-get install -y ruby-dev
