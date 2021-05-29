@@ -1,0 +1,30 @@
+{
+    "name": "nodejs-to-heroku",
+    "version": "1.0.0",
+    "description": "node js app deployed to heruko using gitlab",
+    "main": "index.js",
+    "scripts": {
+        "start": "node index.js",
+        "test": "mocha --exit"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://gitlab.com/kiranjagz/nodejs-api-to-heroku.git"
+    },
+    "keywords": [
+        "nodejs"
+    ],
+    "author": "kiran",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://gitlab.com/kiranjagz/nodejs-api-to-heroku/issues"
+    },
+    "homepage": "https://gitlab.com/kiranjagz/nodejs-api-to-heroku#readme",
+    "dependencies": {
+        "body-parser": "^1.19.0",
+        "chai": "^4.3.4",
+        "express": "^4.17.1",
+        "mocha": "^8.4.0",
+        "supertest": "^6.1.3"
+    }
+}
