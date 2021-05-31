@@ -1,13 +1,8 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 
-const addNumbers = (firstNumber, secondNumber) => {
-    //   check that input is a number
-    if (typeof(Number(firstNumber)) !== 'number' || typeof(Number(secondNumber)) !== 'number') {
-        return 'Values should be integer or numbers';
-    };
-    return Number(firstNumber) + Number(secondNumber);
-}
+const addRoutes = require("./routes/add");
+const subtractRoutes = require("./routes/subtract");
 
 const {
     urlencoded,
@@ -21,16 +16,8 @@ app.use(urlencoded({
     extended: false
 }));
 
-app.post('/api/add', (req, res) => {
-    const {
-        firstNumber,
-        secondNumber
-    } = req.body;
-    const result = addNumbers(firstNumber, secondNumber);
-    return res.status(200).send({
-        result
-    });
-});
+app.use("/api/addition", addRoutes);
+app.use("/api/subtraction", subtractRoutes);
 
 app.get('/', (req, res) => {
     console.log("a");
@@ -39,10 +26,6 @@ app.get('/', (req, res) => {
     })
 });
 // route to catch all
-app.get('*', (req, res) =>
-    res.status(200).send({
-        message: 'Catch all Bobbi.',
-    }));
 
 app.listen(port, (err) => {
     if (!err) {
