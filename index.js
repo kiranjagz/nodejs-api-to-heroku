@@ -20,7 +20,6 @@ app.use("/api/addition", addRoutes);
 app.use("/api/subtraction", subtractRoutes);
 
 app.get('/', (req, res) => {
-    console.log("a");
     res.status(200).send({
         message: 'Hello from Bobbo!',
     })

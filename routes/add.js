@@ -1,12 +1,6 @@
 const express = require("express");
 const router = express.Router();
-
-const addNumbers = (firstNumber, secondNumber) => {
-    if (typeof(Number(firstNumber)) !== 'number' || typeof(Number(secondNumber)) !== 'number') {
-        return 'Values should be integer or numbers';
-    };
-    return Number(firstNumber) + Number(secondNumber);
-}
+const addService = require('./../services/add-service');
 
 router.get('', (req, res) => {
     console.log("add route hit!");
@@ -20,7 +14,7 @@ router.post("", (req, res) => {
         firstNumber,
         secondNumber
     } = req.body;
-    const result = addNumbers(firstNumber, secondNumber);
+    const result = addService.add(firstNumber, secondNumber);
     return res.status(200).send({
         result
     });

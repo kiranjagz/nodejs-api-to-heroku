@@ -1,9 +1,6 @@
 const express = require("express");
 const router = express.Router();
-
-function subtraction(numberOne, numberTwo) {
-    return numberOne - numberTwo;
-};
+const subtractService = require('./../services/subtract-service');
 
 router.get('', (req, res) => {
     console.log("subtraction route hit!");
@@ -12,13 +9,12 @@ router.get('', (req, res) => {
     })
 });
 
-
 router.post("", (req, res, next) => {
     const {
         firstNumber,
         secondNumber
     } = req.body;
-    const result = subtraction(firstNumber, secondNumber);
+    const result = subtractService.subtract(firstNumber, secondNumber);
     return res.status(200).send({
         result
     });
