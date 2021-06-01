@@ -9,13 +9,13 @@ stages:
   - test
   - deploy_production
 
-Test:
+run tests:
   stage: test
   script:
     - npm install
     - npm run test
 
-Production:
+deploy to heroku:
   image: ruby:latest
   stage: deploy_production
   only:
