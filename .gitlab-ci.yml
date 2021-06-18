@@ -36,8 +36,8 @@ postman_api_tests:
     entrypoint: [""]
   script:
     - newman --version
-    - npm install -g newman-reporter-html
-    - newman run Heroku.postman_collection.json --reporters cli,html,junit --reporter-html-export newman/report.html --reporter-junit-export newman/report.xml
+    - npm install -g newman-reporter-htmlextra
+    - newman run Heroku.postman_collection.json --reporters cli,htmlextra,junit --reporter-htmlextra-export newman/report.html --reporter-junit-export newman/report.xml
   artifacts:
     when: always
     paths:
