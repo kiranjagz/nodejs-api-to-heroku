@@ -6,7 +6,7 @@
 	},
 	"item": [
 		{
-			"name": "https://nodejs-to-heroku.herokuapp.com/api/subtraction",
+			"name": "get subtraction",
 			"event": [
 				{
 					"listen": "test",
@@ -15,7 +15,46 @@
 							"pm.test(\"Status code is 200\", function () {\r",
 							"    pm.response.to.have.status(200);\r",
 							"});\r",
-							""
+							"pm.test(\"Response time is less than 200ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+							"});\r",
+							"pm.test(\"Body matches string\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"Hello from subtraction!\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://nodejs-to-heroku.herokuapp.com/api/subtraction",
+					"protocol": "https",
+					"host": [
+						"nodejs-to-heroku",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"subtraction"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "post subtraction",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
 						],
 						"type": "text/javascript"
 					}
