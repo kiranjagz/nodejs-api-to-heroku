@@ -41,9 +41,9 @@ postman_api_tests:
   artifacts:
     when: always
     paths:
-      - report.html
+      - newman/
     reports:
-      junit: report.xml
+      junit: newman/report.xml
 
 publish_api_reports:
   stage: publish_report
