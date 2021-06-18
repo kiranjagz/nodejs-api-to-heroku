@@ -8,14 +8,15 @@ cache:
 stages:
   - test
   - deploy_production
+  - api_production_test
 
-run tests:
+run_unit_tests:
   stage: test
   script:
     - npm install
     - npm run test
 
-deploy to heroku:
+deploy_to_heroku:
   image: ruby:latest
   stage: deploy_production
   only:
@@ -26,3 +27,19 @@ deploy to heroku:
     - apt-get install -y ruby-dev
     - gem install dpl
     - dpl --provider=heroku --app=$HEROKU_APP_NAME --api-key=$HEROKU_API_KEY
+
+postman_api_tests:
+  stage: api_production_test
+  image:
+    name: postman/newman_alpine33
+    entrypoint: [""]
+  script:
+    - newman --version
+    - npm install -g newman-reporter-html
+    - newman run Heroku.postman_collection.json --reporters cli,html,junit --reporter-html-export report.html --reporter-junit-export report.xml
+  artifacts:
+    when: always
+    paths:
+      - report.html
+    reports:
+      junit: report.xml
