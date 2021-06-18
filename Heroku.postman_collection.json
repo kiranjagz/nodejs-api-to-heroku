@@ -1,92 +1,87 @@
 {
-	"info": {
-		"_postman_id": "e5846cb5-a38b-4fbe-ba9d-49c20650c64c",
-		"name": "Heroku",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
-	},
-	"item": [
-		{
-			"name": "get subtraction",
-			"event": [
-				{
-					"listen": "test",
-					"script": {
-						"exec": [
-							"pm.test(\"Status code is 200\", function () {\r",
-							"    pm.response.to.have.status(200);\r",
-							"});\r",
-							"pm.test(\"Response time is less than 200ms\", function () {\r",
-							"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
-							"});\r",
-							"pm.test(\"Body matches string\", function () {\r",
-							"    pm.expect(pm.response.text()).to.include(\"Hello from subtraction!\");\r",
-							"});"
-						],
-						"type": "text/javascript"
-					}
-				}
-			],
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "https://nodejs-to-heroku.herokuapp.com/api/subtraction",
-					"protocol": "https",
-					"host": [
-						"nodejs-to-heroku",
-						"herokuapp",
-						"com"
-					],
-					"path": [
-						"api",
-						"subtraction"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "post subtraction",
-			"event": [
-				{
-					"listen": "test",
-					"script": {
-						"exec": [
-							"pm.test(\"Status code is 200\", function () {\r",
-							"    pm.response.to.have.status(200);\r",
-							"});"
-						],
-						"type": "text/javascript"
-					}
-				}
-			],
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"firstNumber\" : 51,\r\n    \"secondNumber\": 35\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "https://nodejs-to-heroku.herokuapp.com/api/subtraction",
-					"protocol": "https",
-					"host": [
-						"nodejs-to-heroku",
-						"herokuapp",
-						"com"
-					],
-					"path": [
-						"api",
-						"subtraction"
-					]
-				}
-			},
-			"response": []
-		}
-	]
+    "info": {
+        "_postman_id": "e5846cb5-a38b-4fbe-ba9d-49c20650c64c",
+        "name": "Heroku",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [{
+            "name": "get subtraction",
+            "event": [{
+                "listen": "test",
+                "script": {
+                    "exec": [
+                        "pm.test(\"Status code is 200\", function () {\r",
+                        "    pm.response.to.have.status(200);\r",
+                        "});\r",
+                        "pm.test(\"Response time is less than 500ms\", function () {\r",
+                        "    pm.expect(pm.response.responseTime).to.be.below(500);\r",
+                        "});\r",
+                        "pm.test(\"Body matches string\", function () {\r",
+                        "    pm.expect(pm.response.text()).to.include(\"Hello from subtraction!\");\r",
+                        "});"
+                    ],
+                    "type": "text/javascript"
+                }
+            }],
+            "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                    "raw": "https://nodejs-to-heroku.herokuapp.com/api/subtraction",
+                    "protocol": "https",
+                    "host": [
+                        "nodejs-to-heroku",
+                        "herokuapp",
+                        "com"
+                    ],
+                    "path": [
+                        "api",
+                        "subtraction"
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "post subtraction",
+            "event": [{
+                "listen": "test",
+                "script": {
+                    "exec": [
+                        "pm.test(\"Status code is 200\", function () {\r",
+                        "    pm.response.to.have.status(200);\r",
+                        "});"
+                    ],
+                    "type": "text/javascript"
+                }
+            }],
+            "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\r\n    \"firstNumber\" : 51,\r\n    \"secondNumber\": 35\r\n}",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    }
+                },
+                "url": {
+                    "raw": "https://nodejs-to-heroku.herokuapp.com/api/subtraction",
+                    "protocol": "https",
+                    "host": [
+                        "nodejs-to-heroku",
+                        "herokuapp",
+                        "com"
+                    ],
+                    "path": [
+                        "api",
+                        "subtraction"
+                    ]
+                }
+            },
+            "response": []
+        }
+    ]
 }
