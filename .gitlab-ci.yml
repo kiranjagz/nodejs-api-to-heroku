@@ -45,7 +45,7 @@ postman_api_tests:
     reports:
       junit: newman/report.xml
 
-publish_api_reports:
+pages:
   stage: publish_report
   script:
     - mkdir public
