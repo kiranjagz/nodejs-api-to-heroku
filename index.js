@@ -19,12 +19,12 @@ app.use(urlencoded({
 app.use("/api/addition", addRoutes);
 app.use("/api/subtraction", subtractRoutes);
 
+// route to catch all
 app.get('/', (req, res) => {
     res.status(200).send({
         message: 'Hello from Bobbo!',
     })
 });
-// route to catch all
 
 app.listen(port, (err) => {
     if (!err) {
