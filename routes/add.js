@@ -1,9 +1,15 @@
 const express = require("express");
 const router = express.Router();
 const addService = require('./../services/add-service');
+const log = require('./../log');
 
 router.get('', (req, res) => {
-    console.log("add route hit!");
+    var message = "add route hit!";
+
+    // test the logger
+    log.info(message);
+    console.log(message);
+
     res.status(200).send({
         message: 'Hello from add!',
     })

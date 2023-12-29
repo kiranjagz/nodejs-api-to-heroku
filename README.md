@@ -5,11 +5,10 @@
 NodeJs application to deploy to heruko, using ci-cd.
 Project built using: 
 
-1. nodejs
-2. mocha and chai test framework
-3. deploy to heroku
-4. api tests using Postman and newman
-5. reports hosted on gitlab pages
+1. Nodejs express using routes and services
+2. Mocha and chai test framework
+3. Deploy to heroku [!Can no longer deploy free :(]
+4. Refer to gitlab for sample on newman and gitlab pages
 
 # Postman Api pages link
 
